@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ProgOblig 01 Individuell Del</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <script src="javascript.js"></script>
+        <h1>ProgOblig 01 Individuell Del</h1>
+        <div class="container">
+            <div class="oppgaver">
+                <div class="overskr1">Oppgave Ind01</div>
+                <ol class="ind_list">
+                    <li>Operatøren i uttrykket er "+", og operandene er tallene.</li>
+                    <li>Subtraksjon(-), Addisjon(+), Multiplikasjon(*), Divisjon(/).</li>
+                    <li>Uttrykket kan tolkes forskjellig, avhengig av hvilken kompilator man bruker.</li>
+                    <li>Uttrykket gir meg feilmelding. Det er fordi Pyret tilsynelantende ikke har hieriarki på operatørene i uttrykket, eller en standard måte å regne ut uttrykk med flere operatører. For å løse uttrykket, må vi gruppere multiplikasjonen i en parentes.</li>
+                    <li>JavaScript løser uttrykket riktig. Det er fordi at multiplikasjon-operatøren har høyere presedens enn addisjon-operatøren, og blir derfor regnet ut før addisjonen.</li>
+                    <li>Som i oppgave "e", kan ikke CPO utføre uttrykket uten en parentesgruppering. I JavaScript har operatørene " + " og " - " samme presedens, og siden de har samme presedens vil uttrykket utføres i fra venstre til høyre.</li>
+                    <li>I både CPO og i JavaScript kan vi gruppere "4 + 1" i en parentes. 
+                        <br>Så (4 + 1). Siden parentes har høyere presedens i Javascript, og tilsynelatende også i CPO, vil parentes utrykket utføres før subtraksjonen.</li>
+                    <li>Som jeg nevnte i oppgave "g", har " + " og " - " samme presedens, og vil utføres i fra venstre til høyre uavhengig av deres posisjon.</li>
+                    <li>Multiplikasjon(*)- og divisjon(/)-operatørene har samme presedens, og vil utføres i fra venstre til høyre, på samme måte som addisjon og subtraksjon. Dersom multiplikasjon- og divisjon-operatørene er i et uttrykk med addisjon- og/eller subtraksjon-operatører, har multiplikasjon/divisjon høyere presedens enn addisjon/subtraksjon, og vil utføres før addisjon/subtraksjon.</li>
+                    <li>6 * 5 - 7 + 8 / 2 = 27
+                        <br>
+                        <br>I JSF regnes det ut slik: 
+                        <br>(6 * 5) - 7 + (8 / 2) = 30 - 7 + 4 = 27
+                        <br>
+                        <br>Som jeg har svart på flere ganger nå, har multiplikasjon/divisjon høyere presedens enn addisjon/subtraksjon, og vil derfor regnes ut først. Det vil JSF gjøre uavhengig av deres posisjon i uttrykket. 
+                    </li>
+                    <li><strong>Fordeler:</strong>
+                        <br>Fordeler er at man må faktisk presisere hva som skal regnes ut først for å få ønsket resultat.
+                        <br>
+                        <br><strong>Ulemper:</strong>
+                        <br>Ulempene er at hvis man ikke kjenner til regnereglene kan uttrykket bli feil. Jo mer man må skrive, jo mer ineffektivt blir det å kode også.
+                    </li>
+                    <li>Funksjonen num-max finner det <em>største</em> av to tall. Så num-max(4, 5) returnerer 5.
+                        <br>
+                        <br>Funksjonen num-min finner det <em>minste</em> av to tall. Så num-min(34, 456) returnerer 24.
+                        <br>
+                        <br>Ingen av funksjonene fungerer med mer enn to argumenter. 
+                    </li>
+                    <li>
+                        <div class="table">
+                            <table style="width: 500px;" cellpadding="4">
+                                <tbody>
+                                <tr>
+                                <td>&nbsp;3 + 4 - num-min(7, 4)</td>
+                                <td>&nbsp;Uttrykk</td>
+                                </tr>
+                                <tr>
+                                <td>&nbsp;3 + 4
+                                    <br>&nbsp;3 - 4
+                                    <br>&nbsp;num-max(-4, 4)
+                                    <br>&nbsp;"hei"
+                                </td>
+                                <td>&nbsp;Program</td>
+                                </tr>
+                                <tr>
+                                <td>&nbsp;"IS-114"</td>
+                                <td>&nbsp;Verdi</td>
+                                </tr>
+                                <tr>
+                                <td>&nbsp;3.141592653</td>
+                                <td>&nbsp;Verdi</td>
+                                </tr>
+                                <tr>
+                                <td>&nbsp;“hei på deg”</td>
+                                <td>&nbsp;Verdi</td>
+                                </tr>
+                                <tr>
+                                <td>&nbsp;"håper det går bra med deg"
+                                    <br>&nbsp;'3'
+                                    <br>&nbsp;2 + '3'
+                                </td>
+                                <td>&nbsp;Program</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>        
+                    </li>
+                    <li>DevTools-konsollen i chrome har mulighet til å tolke uttrykk, verdier og programmer:
+                        <div class="img_container">
+                            <img class="imgs" src="images/devtools_compilator.png" alt="">
+                        </div>
+                    </li>
+                    <li>Pyret løser utrykket på riktig måte: 
+                        <div class="img_container">
+                            <img class="imgs" src="images/pyret_difficult_expression.png" alt="">
+                        </div>
+                        <div>Det gjør ikke JSF:</div>
+                        <div class="img_container">
+                            <img class="imgs" src="images/js_difficult_expression.png" alt="">
+                        </div>
+                        <div>Det er fordi floating-point-tall er lagret og prosessert annerledes i JavaScript. Så binært, er det ikke alle tall som kan bli representert like presist. 0.1 og 0.2 oversatt til binært, har uendelige, ikke-repeterende små-deler, og av den grunn gir det oss et resultat som ikke er nøyaktig 0.3. Det finnes derimot noen måter å komme seg rundt dette på.</div>
+                        <br>
+                        <div>Et eksempel på dette er:</div>
+                        <div class="img_container">
+                            <img class="imgs" src="images/js_difficult_expression_fix.png" alt="">
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="container2">
+            <div class="oppgaver2">
+                <div class="overskr2">Oppgave Ind02</div>
+                <ol class="ind_list">
+                    <li>
+                        <div>Skjermdump av pyret:</div>
+                        <div class="img_container">
+                                <img class="imgs" src="images/variable_names_pyret.png" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <div>Skjermdump av pyret:</div>
+                        <div class="img_container">
+                            <img class="imgs" src="images/oppgave_b_ind02.png" alt="">
+                        </div>
+                    </li>
+                    <li>Pyret gir meg feilmelding fordi definisjonene har det samme navnet.</li>
+                    <li>Vi kan endre navnene til definisjonene så det blir mulig å skille dem:
+                        <br>
+                        <br>world-record-length-women-m
+                        <br>world-record-length-women-ft
+                    </li>
+                    <li>Jeg får feilmelding, fordi bindestrek ikke er tillat i variabel-navn. Jeg kan separere ordene i variabelnavnene med camelCase eller med understreker.</li>
+                    <li><strong>Definisjonsvinduet:</strong>
+                    <br>Definisjonsviduet er der jeg kan skrive og redigere kode. Her kan jeg skape bla. funksjoner og variabler og definere andre blokker med kode.
+                    <br>
+                    <br><strong>Interaksjonsvinduet:</strong>
+                    <br>Interaksjonsvinduet lar meg kjøre og teste koden min. Det lar meg også skrive og utføre koder, umiddelbart se resultatene og feilsøke problemer med koden min.
+                    </li>
+                    <li><a href="https://github.com/Galescape/ProgOblig_01_Individuell_Del/tree/main/pyret_coder">Lenke til pyret kode.</a></li>
+                </ol>
+    </body>
+</html>

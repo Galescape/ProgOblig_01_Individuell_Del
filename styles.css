@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-family: Helvetica, sans-serif;
+    letter-spacing: 0.03rem;
+    font-weight: lighter;
+    color: #48463d;
+    background-color: #c2bda6;
+    background-size: 0.3rem 0.3rem;
+    background-image: linear-gradient(to right, #483D2608 2px, transparent 2px), linear-gradient(to bottom, #483D2608 2px, transparent 2px);
+}
+
+/* Header section */
+
+h1 {
+    display: flex;
+    justify-content: center;
+    margin: 0em 2em 0 2em;
+    padding: 1em;
+    border-bottom: 2px solid #48463d;
+    font-weight: 400;
+    font-size: 48px;
+    letter-spacing: 0.5rem;
+    text-shadow: 0.4rem 0.4rem 0 #48463d40;
+}
+
+/* Oppgave section */
+
+.container, .container2 {
+    display: flex;
+    justify-content: center;
+    padding: 2em;
+}
+
+.oppgaver, .oppgaver2 {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    padding: 0 4em 4em 4em;
+    width: 900px;
+    background-color: #48463d44;
+    background-size: 0.3rem 0.3rem;
+    background-image: linear-gradient(to right, #48463D10 2px, transparent 2px), linear-gradient(to bottom, #48463D10 2px, transparent 2px);
+}
+
+.overskr1, .overskr2 {
+    display: flex;
+    justify-content: center;
+    padding: 0.5em;
+    border-bottom: 2px solid #48463d;
+    font-size: 36px;
+    font-weight: 400;
+    letter-spacing: 0.5rem;
+}
+
+ol {
+    display: flex;
+    flex-direction: column;
+    padding: 1em 1.3em;
+    margin: 0;
+    gap: 24px;
+    list-style-type: lower-alpha;
+    font-size: 24px;
+    font-weight: 300;
+    border-bottom: 2px solid #48463d;
+}
+
+/* Oppgave animation */
+
+.oppgaver li, .oppgaver2 li{
+    padding: 0.5em;
+    background-color: #48463d26;
+    transform: scale(1);
+    transition: background-color 0.3s ease-in-out, transform 0.3s;
+}
+
+.oppgaver li:hover, .oppgaver2 li:hover {
+    background-color: #48463d;
+    color: #c2bda6;
+    transform: scale(1.075);
+    transition: background-color 0.3s ease-in-out, transform 0.3s;
+}
+
+/* Table */
+
+.table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.3em;
+}
+
+.table > table {
+    border: 2px solid #48463d;
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 2px solid #48463d;
+}
+
+/* Table animation */
+
+.oppgaver li:hover table {
+    border-color: #c2bda6;
+}
+
+.oppgaver li:hover td {
+    border: 2px solid #c2bda6;
+}
+
+/* image */
+
+.img_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.6em;
+}
+
+.imgs {
+    width: 800px;
+    height: auto;
+}
+
+/* anchor */
+
+a {
+    color: #48463d;
+}
+
+/* Anchor animation */
+
+.oppgaver2 li:hover a {
+    color: #c2bda6;
+}
